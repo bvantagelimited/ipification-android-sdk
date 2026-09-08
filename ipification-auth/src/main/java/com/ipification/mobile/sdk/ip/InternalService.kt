@@ -419,14 +419,15 @@ internal class InternalService<T>() {
                         }else{
                                 log("Internet is active; using the default cellular network")
                         }
-                        handleConnection(
-                                isWifiEnabled = false,
-                                network = null,
-                                request = request,
-                                bindAppToCellularNetwork = IPConfiguration.getInstance().bindAppToCellularNetwork,
-                                useWebViewInsteadOfApi = IPConfiguration.getInstance().useWebViewInsteadOfApi,
-                                callback = internalCallback
-                        )
+//                        handleConnection(
+//                                isWifiEnabled = false,
+//                                network = null,
+//                                request = request,
+//                                bindAppToCellularNetwork = IPConfiguration.getInstance().bindAppToCellularNetwork,
+//                                useWebViewInsteadOfApi = IPConfiguration.getInstance().useWebViewInsteadOfApi,
+//                                callback = internalCallback
+//                        )
+                        forceCellularConnection(request, false, "wifi disabled")
                         return
                 }else{
                         log("WIFI IS ENABLED")
